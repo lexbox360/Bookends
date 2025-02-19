@@ -16,7 +16,7 @@ main {
     padding-left: 0.5rem;
 }
 
-.product-title {
+.book-title {
     height: 2.5em;
     overflow: hidden;
     text-overflow: ellipsis;
