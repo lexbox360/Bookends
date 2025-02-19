@@ -4,7 +4,7 @@ import Rating from "../components/Rating";
 import books from "../books";
 
 const BookScreen = () => {
-    const { _id:bookId } = useParams();
+    const { id: bookId } = useParams();
     const book = books.find((p) => p._id === bookId);
 
     return (
