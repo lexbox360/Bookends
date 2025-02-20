@@ -1,11 +1,19 @@
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
+import axios from 'axios';
 import Rating from '../components/Rating';
-import books from '../books';
 
 const BookScreen = () => {
+    const [book, setBook] = useState({});
     const { id: bookId } = useParams();
-    const book = books.find((p) => p._id === bookId);
+
+    useEffect(() => {
+        const fetchBook = async () => {
+            const { data } = await axios.get('/api/books/${bookId}');
+            setBook(data);
+          }
+    }, [bookId]);
 
     return (
         <>
