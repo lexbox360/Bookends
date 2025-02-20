@@ -1,0 +1,15 @@
+{
+  "name": "bookends",
+  "version": "1.0.0",
+  "description": "eCommerce bookstore application built with the MERN stack",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "author": "lexbox360",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
