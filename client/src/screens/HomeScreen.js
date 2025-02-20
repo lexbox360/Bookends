@@ -12,7 +12,7 @@ const HomeScreen = () => {
       setBooks(data);
     }
   }, [])
-
+  
   return (
     <>
         <h1>Latest Books</h1>
@@ -25,6 +25,6 @@ const HomeScreen = () => {
         </Row>
     </>
   )
-}
+};
 
-export default HomeScreen
+export default HomeScreen;
