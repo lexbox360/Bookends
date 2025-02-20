@@ -12,7 +12,7 @@ router.get("/:id", asyncHandler(async (req, res) => {
     const book = await Book.findById(req.params.id);
 
     if (book) {
-        res.json(book);
+        return res.json(book);
     }
 
     res.status(404).json({ message: "Book not found" })
