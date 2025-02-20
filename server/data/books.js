@@ -1,6 +1,5 @@
 const books = [
     {
-        _id: 0,
         title: "Gideon the Ninth",
         author: "Tamsyn Muir",
         cover: "/images/gideon-the-ninth.jpg",
@@ -23,7 +22,6 @@ const books = [
         countInStock: 10
     },
     {
-        _id: 1,
         title: "Harrow the Ninth",
         author: "Tamsyn Muir",
         cover: "/images/harrow-the-ninth.jpg",
@@ -46,7 +44,6 @@ const books = [
         countInStock: 9
     },
     {
-        _id: 2,
         title: "Nona the Ninth",
         author: "Tamsyn Muir",
         cover: "/images/nona-the-ninth.jpg",
@@ -69,7 +66,6 @@ const books = [
         countInStock: 6
     },
     {
-        _id: 3,
         title: "A Memory Called Empire",
         author: "Arkady Martine",
         cover: "/images/a-memory-called-empire.jpg",
@@ -89,7 +85,6 @@ const books = [
         countInStock: 10
     },
     {
-        _id: 4,
         title: "A Desolation Called Peace",
         author: "Arkady Martine",
         cover: "/images/a-desolation-called-peace.jpg",
@@ -109,7 +104,6 @@ const books = [
         countInStock: 9
     },
     {
-        _id: 5,
         title: "This Is How You Lose the Time War",
         author: "Amal El-Mohtar, Max Gladstone",
         cover: "/images/this-is-how-you-lose-the-time-war.jpg",
