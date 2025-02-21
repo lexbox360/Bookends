@@ -13,6 +13,9 @@ router.get("/:id", asyncHandler(async (req, res) => {
 
     if (book) {
         return res.json(book);
+    } else {
+        res.status(404);
+        throw new Error('Resource not found -- No book with that ID.');
     }
 
     res.status(404).json({ message: "Book not found" })
