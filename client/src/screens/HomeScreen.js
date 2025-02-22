@@ -1,28 +1,25 @@
-import { useEffect, useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import axios from 'axios';
-import Book from '../components/Book.js';
+import Book from '../components/Book';
+import { useGetBooksQuery } from '../slices/booksApiSlice';
 
 const HomeScreen = () => {
-  const [books, setBooks] = useState([]);
-
-  useEffect(() => {
-    const fetchBooks = async () => {
-      const { data } = await axios.get('/api/books');
-      setBooks(data);
-    }
-  }, [])
+  const { data: books, isLoading, error } = useGetBooksQuery();
   
   return (
     <>
+      {isLoading ? (
+        <h2>Loading...</h2>
+      ) : error ? (<div>{ error?.data?.message || error.error }</div>) : (<>
         <h1>Latest Books</h1>
-        <Row>
+          <Row>
             {books.map((book) => (
                 <Col key={book._id} sm={12} md={6} lg={4} xl={3}>
                     <Book book={book} />
                 </Col>
             ))}
         </Row>
+      </>) }
+        
     </>
   )
 };
