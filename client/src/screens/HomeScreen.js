@@ -1,6 +1,8 @@
 import { Row, Col } from 'react-bootstrap';
 import Book from '../components/Book';
 import { useGetBooksQuery } from '../slices/booksApiSlice';
+import Loader from '../components/Loader';
+import Message from '../components/Message';
 
 const HomeScreen = () => {
   const { data: books, isLoading, error } = useGetBooksQuery();
@@ -8,8 +10,13 @@ const HomeScreen = () => {
   return (
     <>
       {isLoading ? (
-        <h2>Loading...</h2>
-      ) : error ? (<div>{ error?.data?.message || error.error }</div>) : (<>
+        <Loader />
+      ) : error ? (
+        <Message variant='danger'>
+          { error?.data?.message || error.error }
+        </Message>
+      ) : (
+      <>
         <h1>Latest Books</h1>
           <Row>
             {books.map((book) => (
